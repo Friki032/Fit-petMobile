@@ -1,0 +1,192 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66000000" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="48dp">
+
+                <TextView
+                    android:text="Registro"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre completo"
+                    android:inputType="textPersonName"
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo electrónico"
+                    android:inputType="textEmailAddress"
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- CAMPO DE CONTRASEÑA CON BOTÓN OJO (Material Components) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    app:endIconMode="password_toggle"
+                    android:layout_marginBottom="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textColor="#000000"
+                        android:textColorHint="#808080"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <EditText
+                    android:id="@+id/etTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Teléfono"
+                    android:inputType="phone"
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etPais"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="País"
+                    android:inputType="textCapWords"
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etCiudad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ciudad"
+                    android:inputType="textCapWords"
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de cuenta:"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/rgRol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <RadioButton
+                        android:id="@+id/rbUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Usuario"
+                        android:textColor="#FFFFFF"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/rbVeterinario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Veterinario"
+                        android:textColor="#FFFFFF"/>
+                </RadioGroup>
+
+                <!-- Dirección del local, solo visible si es veterinario -->
+                <EditText
+                    android:id="@+id/etDireccionLocal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dirección del local (solo veterinario)"
+                    android:inputType="textCapWords"
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="#000000"
+                    android:textColorHint="#808080"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp" />
+
+                <Button
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registrarse"
+                    android:backgroundTint="#4A4E69"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- Pie de página: logo y nombre de la app -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/logoFitPet"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logofitpet"
+            android:contentDescription="Logo Fit Pet" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fit Pet"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</LinearLayout>
